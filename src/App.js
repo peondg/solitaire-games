@@ -13,10 +13,10 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/pirateGold" component={PirateGold} />
-          <Route path="/lazyboy" component={LazyBoy} />
-          <Route path="/klondike" component={Klondike} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/pirateGold" component={PirateGold} />
+          <Route exact path="/lazyboy" component={LazyBoy} />
+          <Route exact path="/klondike" component={Klondike} />
           <Redirect to="/home" />
         </Switch>
         <Footer />

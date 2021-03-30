@@ -1,7 +1,9 @@
 const Home = () => {
   return (
-    <div>
-      <h1>HOME</h1>
+    <div className="container main-container">
+      <div className="row w-100 h-auto justify-content-center align-items-center">
+        <h1>Welcome to Solitaire Games!</h1>
+      </div>
     </div>
   );
 };
