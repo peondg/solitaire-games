@@ -1,7 +1,9 @@
 const LazyBoy = () => {
   return (
-    <div>
-      <h1>LAZY BOY</h1>
+    <div className="container main-container">
+      <div className="row w-100 h-auto justify-content-center align-items-center">
+        <h1>LAZY BOY</h1>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,9 @@
 const Klondike = () => {
   return (
-    <div>
-      <h1>KLONDIKE</h1>
+    <div className="container main-container">
+      <div className="row w-100 h-auto justify-content-center align-items-center">
+        <h1>KLONDIKE</h1>
+      </div>
     </div>
   );
 };
