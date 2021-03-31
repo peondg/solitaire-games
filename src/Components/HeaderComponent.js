@@ -26,24 +26,24 @@ class Header extends Component {
       <Navbar dark sticky="top" expand="lg" color="dark">
         <div className="container">
           <NavbarBrand className="mr-auto" href="/">
-            Solitaire
+            <i className="fa fa-user-circle-o fa-lg" /> Solitaire
           </NavbarBrand>
           <NavbarToggler onClick={this.toggleNav} />
           <Collapse isOpen={this.state.isNavOpen} navbar>
             <Nav navbar className="ml-auto">
               <NavItem>
                 <NavLink className="nav-link" to="/pirateGold">
-                  <i className="fa fa-home fa-lg" /> Pirate Gold
+                  <i className="fa fa-anchor fa-lg" /> Pirate Gold
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="nav-link" to="/lazyBoy">
-                  <i className="fa fa-list fa-lg" /> Lazy Boy
+                  <i className="fa fa-bed fa-lg" /> Lazy Boy
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="nav-link" to="/klondike">
-                  <i className="fa fa-info fa-lg" /> Klondike
+                  <i className="fa fa-usd fa-lg" /> Klondike
                 </NavLink>
               </NavItem>
             </Nav>
