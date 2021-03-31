@@ -5,8 +5,8 @@ const Footer = () => {
     <div id="footer-section" className="py-3">
       <div className="container">
         <div className="row">
-          <div className="col-4 col-md-3">
-            <ul>
+          <div className="col-4 col-md-3 mx-auto">
+            <ul className="text-left">
               <li>
                 <Link to="/home">Home</Link>
               </li>
