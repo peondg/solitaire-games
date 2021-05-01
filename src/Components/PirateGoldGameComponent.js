@@ -1,12 +1,6 @@
 import { Button, Container, Row, Col } from "reactstrap";
 import { Component } from "react";
-import {
-  ranks,
-  suits,
-  PlayingCard,
-  PlayingCardItem,
-  faceDownCard,
-} from "../shared/PlayingCardComponent";
+import { PlayingCard } from "../shared/PlayingCardComponent";
 
 // PirateGoldGame class Component
 class PirateGoldGame extends Component {
@@ -20,8 +14,8 @@ class PirateGoldGame extends Component {
   }
   componentDidMount() {
     this.setupCardDeck();
-    this.shuffleDeck();
-    this.displayCards();
+    // this.shuffleDeck();
+    // this.displayCards();
   }
   handleQuitButton = () => {
     this.setState({
@@ -34,18 +28,6 @@ class PirateGoldGame extends Component {
       showQuit: true,
       showPlay: false,
     });
-    console.log(this.state);
-  };
-  // setupCardDeck function
-  setupCardDeck = () => {
-    let index = 0;
-    for (let suitIndex = 0; suitIndex < suits.length; suitIndex++) {
-      for (let rankIndex = 0; rankIndex < ranks.length; rankIndex++) {
-        const newCard = new PlayingCardItem(ranks[rankIndex], suits[suitIndex]);
-        this.setState({ deck: this.state.deck, newCard });
-        index++;
-      }
-    }
   };
   // Helper JS Function to pick a random card for index between 0 and 51 (for 52 card deck)
   pickRandomCard = () => {
