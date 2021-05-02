@@ -47,7 +47,7 @@ class PirateGold extends Component {
   }
   // Function that will be called when clicking on the button.
   // It will remove the instructions and show the game.
-  removeInstructions = () => {
+  handleClick = () => {
     this.setState({
       showInstructions: false,
       showGame: true,
@@ -66,7 +66,7 @@ class PirateGold extends Component {
             type="button"
             color="primary"
             className="my-3"
-            onClick={this.removeInstructions}
+            onClick={() => this.handleClick()}
           >
             START
           </Button>

@@ -1,5 +1,6 @@
 import { Button, Container, Row, Col } from "reactstrap";
 import { Component } from "react";
+import deckObject from "../shared/deckObject";
 import { PlayingCard } from "../shared/PlayingCardComponent";
 
 // PirateGoldGame class Component
@@ -7,37 +8,34 @@ class PirateGoldGame extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showQuit: true,
-      showPlay: false,
-      deck: [],
+      showQuit: false,
+      showPlay: true,
+      deck: deckObject(),
     };
-  }
-  componentDidMount() {
-    this.setupCardDeck();
-    // this.shuffleDeck();
-    // this.displayCards();
   }
   handleQuitButton = () => {
     this.setState({
       showQuit: false,
       showPlay: true,
     });
+    this.displayCards();
   };
   handlePlayButton = () => {
     this.setState({
       showQuit: true,
       showPlay: false,
     });
+    this.shuffleDeck([...this.state.deck]);
   };
   // Helper JS Function to pick a random card for index between 0 and 51 (for 52 card deck)
   pickRandomCard = () => {
     return Math.floor(Math.random() * 52);
   };
   // shuffleDeck function
-  shuffleDeck = () => {
+  shuffleDeck = (deckCopy) => {
     let randomCard = -1;
     let temp = -1;
-    for (let i = 0; i < this.state.deck.length; i++) {
+    for (let i = 0; i < deckCopy.length; i++) {
       // Pick a random card position (0-51) and store into a variable.
       randomCard = this.pickRandomCard();
       // Continue picking random cards until the card at the current position in the
@@ -47,12 +45,10 @@ class PirateGoldGame extends Component {
       }
       // Swap the card at the current position in the for loop with the random one.
       temp = i;
-
-      const tempDeck = [...this.state.deck];
-      tempDeck[i] = tempDeck[randomCard];
-      tempDeck[randomCard] = tempDeck[temp];
-      this.setState({ deck: tempDeck });
+      deckCopy[i] = deckCopy[randomCard];
+      deckCopy[randomCard] = deckCopy[temp];
     }
+    this.setState({ deck: deckCopy });
   };
   // Function to log to the console the cards in the array after shuffling.
   // Used for testing purposes only.
@@ -65,40 +61,80 @@ class PirateGoldGame extends Component {
   };
   render() {
     return (
-      <>
-        <Container className="my-4">
-          <Row>
+      <div>
+        <Container>
+          <Row className="mt-5 mb-5">
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[0].rank}
+                suit={this.state.deck[0].suit}
+                image={this.state.deck[0].image}
+              />
             </Col>
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[1].rank}
+                suit={this.state.deck[1].suit}
+                image={this.state.deck[1].image}
+              />
             </Col>
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[2].rank}
+                suit={this.state.deck[2].suit}
+                image={this.state.deck[2].image}
+              />
             </Col>
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[3].rank}
+                suit={this.state.deck[3].suit}
+                image={this.state.deck[3].image}
+              />
             </Col>
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[4].rank}
+                suit={this.state.deck[4].suit}
+                image={this.state.deck[4].image}
+              />
             </Col>
           </Row>
-          <Row>
+          <Row className="mt-3 mb-5">
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[5].rank}
+                suit={this.state.deck[5].suit}
+                image={this.state.deck[5].image}
+              />
             </Col>
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[6].rank}
+                suit={this.state.deck[6].suit}
+                image={this.state.deck[6].image}
+              />
             </Col>
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[7].rank}
+                suit={this.state.deck[7].suit}
+                image={this.state.deck[7].image}
+              />
             </Col>
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[8].rank}
+                suit={this.state.deck[8].suit}
+                image={this.state.deck[8].image}
+              />
             </Col>
             <Col>
-              <PlayingCard />
+              <PlayingCard
+                rank={this.state.deck[9].rank}
+                suit={this.state.deck[9].suit}
+                image={this.state.deck[9].image}
+              />
             </Col>
           </Row>
         </Container>
@@ -120,7 +156,7 @@ class PirateGoldGame extends Component {
             Play
           </Button>
         </div>
-      </>
+      </div>
     );
   }
 }

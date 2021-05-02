@@ -1,4 +1,4 @@
-import cardObject from "./CardObject";
+import cardObject from "./cardObject";
 
 // Suits
 const suits = ["spades", "clubs", "hearts", "diamonds"];
@@ -20,19 +20,13 @@ const ranks = [
   "king",
 ];
 
-class deckObject {
-    constructor() {
-      this.deck = setupCardDeck();
+// setupCardDeck Function - Arrow function
+export default function deckObject() {
+  const newDeck = [];
+  for (let suitIndex = 0; suitIndex < suits.length; suitIndex++) {
+    for (let rankIndex = 0; rankIndex < ranks.length; rankIndex++) {
+      newDeck.push(new cardObject(ranks[rankIndex], suits[suitIndex]));
     }
-    const setupCardDeck() {
-        const deck = [];
-        for (let suitIndex = 0; suitIndex < suits.length; suitIndex++) {
-          for (let rankIndex = 0; rankIndex < ranks.length; rankIndex++) {
-            deck.push(new cardObject(ranks[rankIndex], suits[suitIndex]);
-          }
-        }
-        return deck;
-    }
+  }
+  return newDeck;
 }
-
-export default deckObject;

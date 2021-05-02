@@ -9,9 +9,3 @@ ul {
 #footer-section {
   background-color: lightgrey;
 }
-
-.main-container {
-  display: flex;
-  width: auto;
-  height: 520px;
-}
