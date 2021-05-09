@@ -8,8 +8,8 @@ function PirateGoldInstructions(props) {
     <Container className="my-4">
       <Row>
         <Col>
-          <h1 className="my-3">PIRATE GOLD</h1>
-          <h2 className="my-4">Instructions</h2>
+          <h1 className="my-4">PIRATE GOLD</h1>
+          <h2 className="my-3">Instructions</h2>
           <div className="text-left">
             <p>
               Pirate Gold is a relatively simple Solitaire game usually played
