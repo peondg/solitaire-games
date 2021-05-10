@@ -9,3 +9,7 @@ ul {
 #footer-section {
   background-color: lightgrey;
 }
+
+.clicked {
+  border: 3px solid red;
+}

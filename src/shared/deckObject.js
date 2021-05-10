@@ -33,16 +33,16 @@ export const shuffleDeck = (deck) => {
       randomCard = Math.floor(Math.random() * 52);
     }
     // Swap the card at the current position in the for loop with the random one.
-    console.log(
-      `Swapping ${i} : ${deck[i].image} => ${randomCard} : ${deck[randomCard].image}`
-    );
+    // console.log(
+    //   `Swapping ${i} : ${deck[i].image} => ${randomCard} : ${deck[randomCard].image}`
+    // );
     temp = deck[i];
     deck[i] = deck[randomCard];
     deck[randomCard] = temp;
-    console.log(
-      `New State: ${i} : ${deck[i].image} => ${randomCard} : ${deck[randomCard].image}`
-    );
-    console.log("-------------------------");
+    // console.log(
+    //   `New State: ${i} : ${deck[i].image} => ${randomCard} : ${deck[randomCard].image}`
+    // );
+    // console.log("-------------------------");
   }
   return deck;
 };

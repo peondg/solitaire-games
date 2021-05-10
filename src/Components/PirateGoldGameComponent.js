@@ -12,12 +12,13 @@ class PirateGoldGame extends Component {
       showPlay: true,
       deck: deckObject(),
       showCards: false,
+      tableau: [],
     };
   }
   displayCards = () => {
     for (let i = 0; i < this.state.deck.length; i++) {
       console.log(
-        `${i}: ${this.state.deck[i].rank} of ${this.state.deck[i].suit}`
+        `Deck: ${i}: ${this.state.deck[i].rank} of ${this.state.deck[i].suit}`
       );
     }
   };
@@ -35,6 +36,7 @@ class PirateGoldGame extends Component {
       showPlay: true,
       deck: deckObject(),
       showCards: false,
+      tableau: [],
     });
   };
   render() {
@@ -59,11 +61,12 @@ class PirateGoldGame extends Component {
               {this.state.deck
                 .filter((card, index) => index >= 5 && index < 10)
                 .map((card, index) => (
-                  <Col key={index}>
+                  <Col key={index + 5}>
                     <PlayingCard
                       rank={card.rank}
                       suit={card.suit}
                       image={card.image}
+                      selected={card.selected}
                     />
                   </Col>
                 ))}

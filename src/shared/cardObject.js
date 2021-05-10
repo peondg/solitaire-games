@@ -3,5 +3,6 @@ export default class cardObject {
     this.rank = rank;
     this.suit = suit;
     this.image = `/images/cards/${this.rank}_${this.suit}.jpeg`;
+    this.selected = false;
   }
 }
